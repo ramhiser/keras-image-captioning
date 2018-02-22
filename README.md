@@ -14,7 +14,7 @@ $ python encode.py -i spurs.jpg
 
 ## Download Flickr8K Data Set
 
-Bash script to download Flickr8K images and their captions. Creates two folders: `/flickr8k_data/images/` and ``/flickr8k_data/captions/`.
+Bash script to download Flickr8K images and their captions. Creates two folders: `/flickr8k_data/images/` and `/flickr8k_data/captions/`.
 
 ```
 cd scripts
