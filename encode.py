@@ -15,8 +15,8 @@ def load_encoding_model():
     """Model to encode image as vector of length 4096 using 2nd to last layer of
     VGG16"""
     base_model = VGG16(weights='imagenet', include_top=True)
-    encoding_model = Model(input=base_model.input,
-                           output=base_model.get_layer('fc2').output)
+    encoding_model = Model(inputs=base_model.input,
+                           outputs=base_model.get_layer('fc2').output)
 
     return encoding_model
 
