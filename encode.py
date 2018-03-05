@@ -32,6 +32,12 @@ def load_image(image_filename, input_shape=None):
     return image
 
 
+def encode_image(image_filename, encoding_model, input_shape=None):
+    image = load_image(image_filename, input_shape)
+    image_encoded = encoding_model.predict(image)
+    return image_encoded
+
+
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
 
@@ -42,9 +48,7 @@ if __name__ == "__main__":
     args = parser.parse_args(sys.argv[1:])
 
     encoding_model = load_encoding_model()
-
-    image = load_image(args.image)
-    image_encoded = encoding_model.predict(image)
+    image_encoded = encode_image(args.image, encoding_model)
 
     print(image_encoded)
     print(image_encoded.shape)
